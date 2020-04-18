@@ -10,7 +10,7 @@ int main(void){
     int count = 0, menu;
     count = loadData(slist);
     curcount = count;
- 
+
     while (1){
 #ifdef DEBUG
         printf("debug[market.c] : call selectMenu()\n");
@@ -22,7 +22,7 @@ int main(void){
         printf("debug[market.c] : call listSnack()\n");
 #endif
             if(count > 0) listSnack(slist, curcount);
-            else printf("저장된 데이터가 없습니다.\n");
+            else printf("데이터가 없습니다.\n");
         }
         else if (menu == 2){
 #ifdef DEBUG
@@ -105,3 +105,4 @@ int main(void){
     printf("종료되었습니다. 감사합니다. \n");
     return 0;
 }
+
