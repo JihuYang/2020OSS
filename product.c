@@ -26,7 +26,7 @@ int loadData(Snack s[]){                    //파일에 저장된 제품을 불�
     for(;;count++){
     	fscanf(fp, "%[^\n]s %d %d %f %d", s[count].name, &s[count].weight, 
                                     &s[count].price, &s[count].perprice, &s[count].star); 
-    	if ( feop(fp) ) break;
+    	if ( feof(fp) ) break;
     }
     
     fclose(fp);
