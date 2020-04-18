@@ -12,7 +12,7 @@ void saveData(Snack *s, int count){         //파일에 제품을 저장하는 �
                         s[i].name, s[i].weight, s[i].price, s[i].perprice, s[i].star);
     }
 
-    printf("저장됨!\n");
+    printf("입력하신 과자 정보가 저장되었습니다!!\n");
 }
 int loadData(Snack s[]){                    //파일에 저장된 제품을 불러오는 함수
     int count = 0;
@@ -20,7 +20,7 @@ int loadData(Snack s[]){                    //파일에 저장된 제품을 불�
     FILE *fp;
     fp = fopen("snack.txt", "rt");
     if(fp==NULL){
-        printf("=> 파일 없음\n");
+        printf("=> 파일이 없습니다.\n");
         return 0;
     }
     fscanf(fp, "%[^\n]s %d %d %f %d", s->name, &s->weight, 
@@ -34,16 +34,16 @@ int loadData(Snack s[]){                    //파일에 저장된 제품을 불�
 
 int createSnack(Snack *s){                  //하나의 제품을 추가하는 함수
     getchar();   
-    printf("과자 이름은? ");
+    printf("과자 이름을 입력해주세요:  ");
     scanf("%[^\n]s", s->name);
-    printf("과자 무게는? ");
+    printf("과자 무게를 입력해주세요 :  ");
     scanf("%d", &s->weight);
-    printf("과자 가격은? ");
+    printf("과자 가격을 입력해주세요 :  ");
     scanf("%d", &s->price);
-    printf("별점수는?? ");
+    printf("별점수를 입력해주세요 :  ");
     scanf("%d", &s->star);
     s->perprice = ((float)s->price/(float)s->weight)*10.0;
-    printf("=> 추가됨!\n");
+    printf("=> 입력하신 과자 정보가 추가되었습니다!!!\n");
     return 1;
 }
 void readSnack(Snack s){                    //하나의 제품을 출력하는 함수
@@ -63,22 +63,22 @@ void listSnack(Snack *s, int count){        //전체 제품을 출력하는 함�
 
 int updateSnack(Snack *s){   
     getchar();               //하나의 제품을 수정하는 함수
-    printf("과자 이름은? ");
+    printf("과자 이름을 입력해주세요 : ");
     scanf("%[^\n]s", s->name);
-    printf("과자 무게는? ");
+    printf("과자 무게를 입력해주세요 : ");
     scanf("%d", &s->weight);
-    printf("과자 가격은? ");
+    printf("과자 가격을 입력해주세요 : ");
     scanf("%d", &s->price);
-    printf("별점수는?? ");
+    printf("별점수를 입력해주세요 :  ");
     scanf("%d", &s->star);
     s->perprice = ((float)s->price/(float)s->weight)*10.0;
-    printf("=> 수정됨!\n");
+    printf("=> 과자 정보가 수정되었습니다!!\n");
     return 1;
 }
 int selectDataNo(Snack *s, int count){      //수정하거나 삭제할 제품의 번호를 입력받는 함>수
     int no;
     listSnack(s, count);
-    printf("번호는 (취소: 0)?");
+    printf("원하는 번호를 입력해주세요 (취소: 0) : ");
     scanf("%d", &no);
     return no;
 }
@@ -93,7 +93,7 @@ void searchName(Snack *s, int count){       //이름을 검색해 등록된 제�
     int scount = 0;
     char search[20];
 
-    printf("검색할 과자의 이름은? ");
+    printf("검색할 과자의 이름을 입력해주세요 :  ");
     scanf("%s", search);
 
     printf("\nNo Name Weight Price Perprice Star\n");
@@ -107,13 +107,13 @@ void searchName(Snack *s, int count){       //이름을 검색해 등록된 제�
             }
         }            
     }
-    if(scount==0) printf("=> 검색된 데이터 없음!\n");
+    if(scount==0) printf("=> 검색된 데이터가 없습니다. \n");
 }
 void searchPrice(Snack *s, int count){      //가격을 검색해 등록된 제품을 찾는 함수
     int scount = 0;
     int search;
 
-    printf("검색할 과자의 가격은? ");
+    printf("검색할 과자의 가격을 입력해주세요 : ");
     scanf("%d", &search);
 
     printf("\nNo Name Weight Price Perprice Star\n");
@@ -127,14 +127,14 @@ void searchPrice(Snack *s, int count){      //가격을 검색해 등록된 제�
             }
         }            
     }
-    if(scount==0) printf("=> 검색된 데이터 없음!\n");
+    if(scount==0) printf("=> 검색된 데이터가 없습니다. \n");
 }
 
 void searchStar(Snack *s, int count){       //별점수를 검색해 등록된 제품을 찾는 함수
     int scount = 0;
     int search;
 
-    printf("검색할 별점수는? ");
+    printf("검색할 별점수를 입력해주세요 : ");
     scanf("%d", &search);
 
     printf("\nNo Name Weight Price Perprice Star\n");
@@ -148,7 +148,7 @@ void searchStar(Snack *s, int count){       //별점수를 검색해 등록된 �
             }
         }            
     }
-    if(scount==0) printf("=> 검색된 데이터 없음!\n");
+    if(scount==0) printf("=> 검색된 데이터가 없습니다. \n");
 }
 int selectMenu(){
     int menu;
