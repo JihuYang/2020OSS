@@ -40,7 +40,9 @@ int main(void){
                 printf("=> 취소되었습니다!!\n");
                 continue;
             }
-            printf("debug[market.c] : call updateSnack()\n");
+#ifdef DEBUG
+        printf("debug[market.c] : call updateSnack()\n");
+#endif
             updateSnack(&slist[no-1]);
         }
         else if (menu == 4){
