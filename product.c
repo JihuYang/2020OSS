@@ -12,7 +12,7 @@ void saveData(Snack *s, int count){         //파일에 제품을 저장하는 �
                         s[i].name, s[i].weight, s[i].price, s[i].perprice, s[i].star);
     }
 
-    printf("입력하신 과자 정보가 저장되었습니다!!\n");
+    printf("입력하신 과자 정보가 파일에 저장되었습니다!!\n");
 }
 int loadData(Snack s[]){                    //파일에 저장된 제품을 불러오는 함수
     int count = 0;
