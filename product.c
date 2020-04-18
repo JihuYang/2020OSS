@@ -23,9 +23,11 @@ int loadData(Snack s[]){                    //파일에 저장된 제품을 불�
         printf("=> 파일이 없습니다.\n");
         return 0;
     }
-    fscanf(fp, "%[^\n]s %d %d %f %d", s->name, &s->weight, 
-                                    &s->price, &s->perprice, &s->star); 
-    count++;
+    for(;;count++){
+    	fscanf(fp, "%[^\n]s %d %d %f %d", s[count].name, &s[count].weight, 
+                                    &s[count].price, &s[count].perprice, &s[count].star); 
+    	if ( feop(fp) ) break;
+    }
     
     fclose(fp);
     printf("=> 로딩 성공!\n");
