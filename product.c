@@ -48,11 +48,11 @@ int createSnack(Snack *s){                  //하나의 제품을 추가하는 �
     return 1;
 }
 void readSnack(Snack s){                    //하나의 제품을 출력하는 함수
-     printf("%s\t%5d %5d %0.f %3d\n", s.name, s.weight, s.price, s.perprice, s.star);
+     printf(" %s %5d%7d %0.f%3d\n", s.name, s.weight, s.price, s.perprice, s.star);
 
 }
 void listSnack(Snack *s, int count){        //전체 제품을 출력하는 함수
-    printf("\nNo Name Weight Price Perprice Star\n");
+    printf("\nNo Name\tWeight\tPrice\tPerprice\tStar\n");
     printf("================================\n");
     for(int i=0;i<count;i++){
         if(s[i].weight == -1) continue;
@@ -97,7 +97,7 @@ void searchName(Snack *s, int count){       //이름을 검색해 등록된 제�
     printf("검색할 과자의 이름을 입력해 주세요 : ");
     scanf("%s", search);
 
-    printf("\nNo Name Weight Price Perprice Star\n");
+    printf("\nNo Name\tWeight\tPrice\tPerprice\tStar\n");
     printf("================================\n");
     for(int i=0;i<count;i++){
         if(s[i].weight != -1){
