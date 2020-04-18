@@ -11,7 +11,7 @@ void saveData(Snack *s, int count){         //파일에 제품을 저장하는 �
                         s[i].weight, s[i].price, s[i].perprice, s[i].star, s[i].name);
     }
 
-    printf("저장됨!\n");
+    printf("파일에 저장되었습니다!!!\n");
 }
 int loadData(Snack s[]){                    //파일에 저장된 제품을 불러오는 함수
     int count = 0;
@@ -153,16 +153,16 @@ void searchStar(Snack *s, int count){       //별점수를 검색해 등록된 �
 }
 int selectMenu(){
     int menu;
-    printf("\n***과자 관리기***\n");
-    printf("1. 조회\n");
-    printf("2. 추가\n");
-    printf("3. 수정\n");
-    printf("4. 삭제\n");
-    printf("5. 파일저장\n");
+    printf("\n**********과자 관리기 메뉴**********\n");
+    printf("1. 과자  조회\n");
+    printf("2. 과자 추가\n");
+    printf("3. 과자 정보 수정\n");
+    printf("4. 과자 삭제\n");
+    printf("5. 파일에 저장\n");
     printf("6. 이름검색\n");
     printf("7. 가격검색\n");
     printf("8. 별점수검색\n");
-    printf("0. 종료\n\n");
+    printf("0. 종료하기\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
     return menu;

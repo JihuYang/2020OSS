@@ -37,7 +37,7 @@ int main(void){
             int no;
             no = selectDataNo(slist, curcount);
             if(no == 0){
-                printf("=> 취소되었습니다!!");
+                printf("=> 취소되었습니다!!\n");
                 continue;
             }
             printf("debug[market.c] : call updateSnack()\n");
@@ -50,7 +50,7 @@ int main(void){
             int no;
             no = selectDataNo(slist, curcount);
             if(no == 0){
-                printf("=> 취소되었습니다!!");
+                printf("=> 취소되었습니다!!\n");
                 continue;
             }
             int deleteok;
@@ -102,7 +102,7 @@ int main(void){
                 searchStar(slist, curcount);
         }          
     }
-    printf("종료되었습니다. 감사합니다. \n");
+    printf("\n\n종료되었습니다. 감사합니다. \n");
     return 0;
 }
 
