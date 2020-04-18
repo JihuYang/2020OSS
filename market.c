@@ -22,7 +22,7 @@ int main(void){
         printf("debug[market.c] : call listSnack()\n");
 #endif
             if(count > 0) listSnack(slist, curcount);
-            else printf("데이터가 없습니다.\n");
+            else printf("저장된 데이터가 없습니다.\n");
         }
         else if (menu == 2){
 #ifdef DEBUG
@@ -37,7 +37,7 @@ int main(void){
             int no;
             no = selectDataNo(slist, curcount);
             if(no == 0){
-                printf("=> 취소됨!");
+                printf("=> 취소되었습니다!!");
                 continue;
             }
             printf("debug[market.c] : call updateSnack()\n");
@@ -50,7 +50,7 @@ int main(void){
             int no;
             no = selectDataNo(slist, curcount);
             if(no == 0){
-                printf("=> 취소됨!");
+                printf("=> 취소되었습니다!!");
                 continue;
             }
             int deleteok;
@@ -63,7 +63,7 @@ int main(void){
                 if(deleteSnack(&slist[no-1])) count--;
             }
             deleteSnack(&s);
-            if(deleteSnack(&s) == 1) printf("=> 삭제됨!\n");
+            if(deleteSnack(&s) == 1) printf("=> 삭제되었습니다!!\n");
         }
         else if (menu == 5){
             if(count == 0)
@@ -102,6 +102,6 @@ int main(void){
                 searchStar(slist, curcount);
         }          
     }
-    printf("종료됨!\n");
+    printf("종료되었습니다. 감사합니다. \n");
     return 0;
 }
